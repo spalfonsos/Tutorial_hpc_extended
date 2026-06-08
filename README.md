@@ -19,6 +19,7 @@ This repository provides the summary of what is going to be explained in the tut
 
 This tutorial is based on and complements the official documentation provided by the
 **Digital Research Alliance of Canada**:
+- https://docs.alliancecan.ca/wiki/Storage_and_file_management
 - https://staff.sharcnet.ca/tyson/Shell-20231002-IntroARC/html/commandline.html#secure-shell 
 - https://docs.alliancecan.ca/wiki/Getting_started
 - https://docs.alliancecan.ca/wiki/Tutorials

@@ -90,7 +90,12 @@ In the local terminal (I am going to transfer C:\Users\salfo\OneDrive - The Univ
 salfonso@DSAS:~$ scp "/mnt/c/users/salfo/OneDrive - The University of Western Ontario/PHD/Banking-Analytics/BCP_Project/TutorialHPC/Class1/data_1/3a396e65.igc" salfonso@narval.computecanada.ca:/home/salfonso/projects/def-cbravo/salfo
 nso/preparation_hpc/class1/3a396e65.igc
 
--from the cluster to the local
+-from the remote cluster to the local
+
+- from different remote clusters
+
+
+Using globus transfer
 
 
 

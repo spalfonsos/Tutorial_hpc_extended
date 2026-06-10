@@ -91,11 +91,10 @@ salfonso@DSAS:~$ scp "/mnt/c/users/salfo/OneDrive - The University of Western On
 nso/tutorial_hpc_bcp/class1/3a396e65.igc
 
 - from the remote cluster to the local
-salfonso@DSAS:~$ scp "/mnt/c/users/salfo/OneDrive - The University of Western Ontario/PHD/Banking-Analytics/BCP_Project/TutorialHPC/Class1/data_1/3a396e65.igc" salfonso@narval.computecanada.ca:/home/salfonso/projects/def-cbravo/salfo
-nso/tutorial_hpc_bcp/class1/3a396e65.igc
+salfonso@DSAS:~$ scp salfonso@narval.computecanada.ca:/home/salfonso/projects/def-cbravo/salfonso/tutorial_hpc_bcp/class1/3a396e65.igc "/mnt/c/Users/salfo/OneDrive - The University of Western Ontario/PHD/Banking-Analytics/BCP_Project/TutorialHPC/Class1/filefromnarval.igc"
 
 - from different remote clusters
-scp salfonso@narval.computecanada.ca:/home/salfonso/projects/def-cbravo/salfonso/tutorial_hpc_bcp/class1/3a396e65.igc "/mnt/c/Users/salfo/OneDrive - The University of Western Ontario/PHD/Banking-Analytics/BCP_Project/TutorialHPC/Class1/filefromnarval.igc"
+scp salfonso@narval.computecanada.ca:/home/salfonso/projects/def-cbravo/salfonso/tutorial_hpc_bcp/class1/3a396e65.igc salfonso@nibi.alliance.ca:~/
 
 Using globus transfer
 

@@ -83,6 +83,15 @@ d rwx r-s r-x
 - [salfonso@narval1 examples]$ rm ourfile1.igc
 
 # Transfering files
+-from the local to the remote cluster
+In the local terminal (I am going to transfer C:\Users\salfo\OneDrive - The University of Western Ontario\PHD\Banking-Analytics\BCP_Project\TutorialHPC\Class1\data_1\3a396e65.igc) to /home/salfonso/projects/def-cbravo/salfonso/preparation_hpc/class1/3a396e65.igc
+
+salfonso@DSAS:~$ scp "/mnt/c/users/salfo/OneDrive - The University of Western Ontario/PHD/Banking-Analytics/BCP_Project/TutorialHPC/Class1/data_1/3a396e65.igc" salfonso@narval.computecanada.ca:/home/salfonso/projects/def-cbravo/salfo
+nso/preparation_hpc/class1/3a396e65.igc
+
+-from the cluster to the local
+
+
 
 
 

@@ -41,12 +41,14 @@ https://drive.google.com/file/d/1Kl3zyxhw2Yzupm8Zg4egxP3D6eMmfq6m/view?usp=drive
 - ls
 - chmod u+w
 - ls -l 
+```text
 d rwx r-s r-x
 │ │   │   │
 │ │   │   └── others
 │ │   └────── group
 │ └────────── owner
 └──────────── directory
+```
 
  Permission | Regular file | Directory |
 |---|---|---|

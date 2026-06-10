@@ -40,7 +40,7 @@ https://drive.google.com/file/d/1Kl3zyxhw2Yzupm8Zg4egxP3D6eMmfq6m/view?usp=drive
 - to see the list of documents
 - ls
 - chmod u+w
-- ls -l 
+- ls -l (give the liss of documment with permissions)
 ```text
 d rwx r-s r-x
 │ │   │   │
@@ -56,6 +56,35 @@ d rwx r-s r-x
 | `w` (write) | Modify or overwrite the file (`nano`, `vim`, `echo >>`) | Create, delete, or rename entries in the directory (`touch`, `rm`, `mv`) |
 | `x` (execute) | Run the file as a program or script (`./script.sh`) | Traverse/search the directory (`cd`, access files by name) |
 
-- 
+- pwd (current path)
+- The command line is very different from Graphical User Interface (GUI). It helps to make automatization (e.g., changing the name of a lot of files)
+- if you mistakenly write sth you could cancel with ctrl+C (here it is different from copy :S)
+- And also we have autocomplete option with the tap key.
+- cd .. takes us again to the home directory
+- cd ~ makes the same as before
+- with man command we see the definition of the commands
+
+## Copy, viewing and editing files
+
+- man cp
+- mkdir examples
+- cd data_1
+[salfonso@narval1 class1]$ cp -T data_1/0144f5b1.igc examples/0144f5b1.igc
+[salfonso@narval1 class1]$ cp data_1/0d1edd25.igc data_1/48da3f0c.igc examples
+[salfonso@narval1 class1]$ cp -t examples data_1/9f615499.igc data_1/99f1f386.igc
+[salfonso@narval1 class1]$ cd examples
+[salfonso@narval1 examples]$ cat 0144f5b1.igc
+[salfonso@narval1 examples]$ head 0144f5b1.igc
+For editing the file
+[salfonso@narval1 examples]$ nano 0144f5b1.igc
+Rename a file
+[salfonso@narval1 examples]$ mv 0144f5b1.igc ourfile1.igc
+remove the file
+[salfonso@narval1 examples]$ rm ourfile1.igc
+
 # Transfering files
+
+
+
+
 

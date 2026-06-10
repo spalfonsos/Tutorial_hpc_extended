@@ -69,18 +69,18 @@ d rwx r-s r-x
 - man cp
 - mkdir examples
 - cd data_1
-[salfonso@narval1 class1]$ cp -T data_1/0144f5b1.igc examples/0144f5b1.igc
-[salfonso@narval1 class1]$ cp data_1/0d1edd25.igc data_1/48da3f0c.igc examples
-[salfonso@narval1 class1]$ cp -t examples data_1/9f615499.igc data_1/99f1f386.igc
-[salfonso@narval1 class1]$ cd examples
-[salfonso@narval1 examples]$ cat 0144f5b1.igc
-[salfonso@narval1 examples]$ head 0144f5b1.igc
-For editing the file
-[salfonso@narval1 examples]$ nano 0144f5b1.igc
-Rename a file
-[salfonso@narval1 examples]$ mv 0144f5b1.igc ourfile1.igc
-remove the file
-[salfonso@narval1 examples]$ rm ourfile1.igc
+-[salfonso@narval1 class1]$ cp -T data_1/0144f5b1.igc examples/0144f5b1.igc
+-[salfonso@narval1 class1]$ cp data_1/0d1edd25.igc data_1/48da3f0c.igc examples
+-[salfonso@narval1 class1]$ cp -t examples data_1/9f615499.igc data_1/99f1f386.igc
+-[salfonso@narval1 class1]$ cd examples
+-[salfonso@narval1 examples]$ cat 0144f5b1.igc
+-[salfonso@narval1 examples]$ head 0144f5b1.igc
+-For editing the file
+-[salfonso@narval1 examples]$ nano 0144f5b1.igc
+-Rename a file
+-[salfonso@narval1 examples]$ mv 0144f5b1.igc ourfile1.igc
+-remove the file
+-[salfonso@narval1 examples]$ rm ourfile1.igc
 
 # Transfering files
 

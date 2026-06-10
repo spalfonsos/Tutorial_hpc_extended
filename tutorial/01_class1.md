@@ -22,16 +22,16 @@ For this class we are going to use the file flights.zip ( extract of the data se
 It is important to know that the computation nodes do not have access to internet so in case we require download files from internet we need to do it from a login node. So, for our first class lets download the data_1 from the following link
 https://drive.google.com/file/d/1Kl3zyxhw2Yzupm8Zg4egxP3D6eMmfq6m/view?usp=drive_link
 
-# 1. Let's make a directory in the path where we are going to store the files we are going to use in the class1
-In the home directory go to the directory projects/def-cbravo/salfonso (you also can store it in the home/user folder)
-cd projects/def-cbravo/salfonso
-mkdir tutorial_hpc_bcp
-cd tutorial_hpc_bcp
-mkdir class1
-Then change directory to class1 and there download the data 
-wget -O data_1.zip "https://drive.google.com/ucexport=download&id=1Kl3zyxhw2Yzupm8Zg4egxP3D6eMmfq6m"
-then unzip the data_1.zip 
-unzip data_1.zip 
+### 1. Let's make a directory in the path where we are going to store the files we are going to use in the class1
+- In the home directory go to the directory projects/def-cbravo/salfonso (you also can store it in the home/user folder)
+- cd projects/def-cbravo/salfonso
+- mkdir tutorial_hpc_bcp
+- cd tutorial_hpc_bcp
+- mkdir class1
+- Then change directory to class1 and there download the data 
+- wget -O data_1.zip "https://drive.google.com/ucexport=download&id=1Kl3zyxhw2Yzupm8Zg4egxP3D6eMmfq6m"
+- then unzip the data_1.zip 
+- unzip data_1.zip 
 
 
 

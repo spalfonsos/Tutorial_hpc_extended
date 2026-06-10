@@ -13,8 +13,13 @@ Alliance systems provide different storage spaces designed for different purpose
 
 Alliance clusters also distinguish between **login nodes** and **compute nodes**. Login nodes are used to prepare and submit jobs, while compute nodes are where the jobs actually execute.
 
+<img width="1431" height="803" alt="storage_by_folders" src="https://github.com/user-attachments/assets/ca44797a-140c-4d50-9d28-1ff3c9af5c4e" />
 
-For this class we are going to use the file flights.zip (the shell introduction course (https://staff.sharcnet.ca/tyson/Shell-20231002-IntroARC/html)). 
+
+
+For this class we are going to use the file flights.zip ( extract of the data set in the shell introduction course (https://staff.sharcnet.ca/tyson/Shell-20231002-IntroARC/html)). 
+
+
 
 
 

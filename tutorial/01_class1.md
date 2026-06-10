@@ -96,7 +96,20 @@ salfonso@DSAS:~$ scp salfonso@narval.computecanada.ca:/home/salfonso/projects/de
 - from different remote clusters
 scp salfonso@narval.computecanada.ca:/home/salfonso/projects/def-cbravo/salfonso/tutorial_hpc_bcp/class1/3a396e65.igc salfonso@nibi.alliance.ca:~/
 
+Remember we could have access to the following resources however in every cluster we will need to store the adequate folders (this is if we create sth in narval is not going to be stored by default in nibi)
+https://docs.alliancecan.ca/wiki/Narval/en
+https://docs.alliancecan.ca/wiki/Nibi#GPU_instances
+https://docs.alliancecan.ca/wiki/Fir
+
 Using globus transfer
+
+https://docs.alliancecan.ca/wiki/Globus#To_start_a_transfer
+globus.alliancecan.ca/file-manager
+<img width="1035" height="665" alt="image" src="https://github.com/user-attachments/assets/46ad631d-b232-4b38-acad-c9f89f1c0855" />
+
+<img width="937" height="730" alt="image" src="https://github.com/user-attachments/assets/ec5805d9-7130-4221-b430-8c37e85736f5" />
+
+<img width="1918" height="1043" alt="image" src="https://github.com/user-attachments/assets/0e05cecc-eda5-4913-8308-0404f863b63c" />
 
 
 

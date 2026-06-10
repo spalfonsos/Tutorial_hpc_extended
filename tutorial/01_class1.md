@@ -30,10 +30,30 @@ https://drive.google.com/file/d/1Kl3zyxhw2Yzupm8Zg4egxP3D6eMmfq6m/view?usp=drive
 - cd tutorial_hpc_bcp
 - mkdir class1
 - Then change directory to class1 and there download the data 
-- wget -O data_1.zip "https://drive.google.com/ucexport=download&id=1Kl3zyxhw2Yzupm8Zg4egxP3D6eMmfq6m"
+- wget -O data_1.zip "https://drive.google.com/uc?export=download&id=1Kl3zyxhw2Yzupm8Zg4egxP3D6eMmfq6m"
 - then unzip the data_1.zip 
 - unzip data_1.zip 
 
 # Getting around
+- We can see the structure of the folder with
+- tree
+- to see the list of documents
+- ls
+- chmod u+w
+- ls -l 
+d rwx r-s r-x
+│ │   │   │
+│ │   │   └── others
+│ │   └────── group
+│ └────────── owner
+└──────────── directory
+
+ Permission | Regular file | Directory |
+|---|---|---|
+| `r` (read) | Read the contents of the file (`cat`, `less`, `head`) | List the names of entries in the directory (`ls`) |
+| `w` (write) | Modify or overwrite the file (`nano`, `vim`, `echo >>`) | Create, delete, or rename entries in the directory (`touch`, `rm`, `mv`) |
+| `x` (execute) | Run the file as a program or script (`./script.sh`) | Traverse/search the directory (`cd`, access files by name) |
+
+- 
 # Transfering files
 

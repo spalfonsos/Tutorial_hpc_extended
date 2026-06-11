@@ -63,6 +63,7 @@ d rwx r-s r-x
 - cd .. takes us again to the home directory
 - cd ~ makes the same as before
 - with man command we see the definition of the commands
+- Advice: Name the folders and files in lower cases and without spaces
 
 ## Copy, viewing and editing files
 

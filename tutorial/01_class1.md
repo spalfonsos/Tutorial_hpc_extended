@@ -88,14 +88,19 @@ d rwx r-s r-x
 
 In the local terminal (I am going to transfer C:\Users\salfo\OneDrive - The University of Western Ontario\PHD\Banking-Analytics\BCP_Project\TutorialHPC\Class1\data_1\3a396e65.igc) to /home/salfonso/projects/def-cbravo/salfonso/preparation_hpc/class1/3a396e65.igc
 
-salfonso@DSAS:~$ scp "/mnt/c/users/salfo/OneDrive - The University of Western Ontario/PHD/Banking-Analytics/BCP_Project/TutorialHPC/Class1/data_1/3a396e65.igc" salfonso@narval.computecanada.ca:/home/salfonso/projects/def-cbravo/salfo
-nso/tutorial_hpc_bcp/class1/3a396e65.igc
+```bash
+salfonso@DSAS:~$ scp "/mnt/c/users/salfo/OneDrive - The University of Western Ontario/PHD/Banking-Analytics/BCP_Project/TutorialHPC/Class1/data_1/3a396e65.igc" salfonso@narval.computecanada.ca:/home/salfonso/projects/def-cbravo/salfonso/tutorial_hpc_bcp/class1/3a396e65.igc
+```
 
 - from the remote cluster to the local
+```bash
 salfonso@DSAS:~$ scp salfonso@narval.computecanada.ca:/home/salfonso/projects/def-cbravo/salfonso/tutorial_hpc_bcp/class1/3a396e65.igc "/mnt/c/Users/salfo/OneDrive - The University of Western Ontario/PHD/Banking-Analytics/BCP_Project/TutorialHPC/Class1/filefromnarval.igc"
-
+```
 - from different remote clusters
+```bash
 [salfonso@narval1 ~]$ scp /home/salfonso/projects/def-cbravo/salfonso/tutorial_hpc_bcp/class1/3a396e65.igc salfonso@nibi.alliancecan.ca:~/3a396e65.igc
+```
+> **MobaXterm users:** Once you are connected to the cluster, you can simply drag and drop files using the SFTP panel that appears on the left side of the MobaXterm window. This is often the easiest way to transfer a few files between your computer and the cluster. Nevertheless, learning `scp` is valuable because it allows you to automate transfers and works independently of graphical interfaces.
 
 As an important observation in every cluster we will need to store the adequate folders (this is if we create sth in narval is not going to be stored by default in nibi)
 https://docs.alliancecan.ca/wiki/Narval/en
@@ -106,11 +111,18 @@ Using globus transfer
 
 https://docs.alliancecan.ca/wiki/Globus#To_start_a_transfer
 globus.alliancecan.ca/file-manager
+
+<p align="center">
 <img width="1035" height="665" alt="image" src="https://github.com/user-attachments/assets/46ad631d-b232-4b38-acad-c9f89f1c0855" />
+</p>
 
+<p align="center">
 <img width="937" height="730" alt="image" src="https://github.com/user-attachments/assets/ec5805d9-7130-4221-b430-8c37e85736f5" />
+</p>
 
+<p align="center">
 <img width="1918" height="1043" alt="image" src="https://github.com/user-attachments/assets/0e05cecc-eda5-4913-8308-0404f863b63c" />
+</p>
 
 #### Now with these preliminary concepts lets follow the session Environment Creation & Interactive Sessions of the Quick start tutorial
 

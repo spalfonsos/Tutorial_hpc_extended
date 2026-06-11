@@ -1,8 +1,14 @@
-During this class we are going to run a jupyter notebook using an interactive session.
+# 🚀 Class 2 – Running Deep Learning Workflows on HPC
 
-For this we are going to use the first lab presented as interactive labs presented in Bravo, C., Maldonado, S., & Oskarsdottir, M. (2026). Deep Learning in Banking: Integrating Artificial Intelligence for Next-Generation Financial Services. John Wiley & Sons.
+During this class we are going to run a Jupyter notebook using an interactive session.
+
+For this we are going to use the first lab presented as interactive labs presented in Bravo, C., Maldonado, S., & Oskarsdottir, M. (2026). *Deep Learning in Banking: Integrating Artificial Intelligence for Next-Generation Financial Services*. John Wiley & Sons.
+
+# 📥 1. Downloading the notebook
 
 Now go to the book page (if possible) https://www.bankingbook.ml/ and download the lab into the local and upload to the cluster (to practice!)
+
+# 🗂️ 2. Preparing the working directory
 
 If you could not access to the internet lets copy the file directly into our desired folder
 
@@ -10,6 +16,8 @@ If you could not access to the internet lets copy the file directly into our des
 - Create a folder for the second class
 - mkdir class2
 - download the file into that folder wget -O lab2.ipynb https://github.com/Banking-Analytics-Lab/DLinBankingBook/blob/main/Labs/TextBook_Lab_Chap2_Image_Processing.ipynb (Model with Lidar images in this case to predict the loan delinquency ratio)
+
+# 🗂️ 2. Preparing the working directory
 
 For runing the previous notebook in the cluster we need to 
 
@@ -29,6 +37,7 @@ For runing the previous notebook in the cluster we need to
    b. Also we need to get the weights for the ResNet50 model that is going to be used in the script in class2 create the folder
    - mkdir resnet50_model_weights
    - nano resnet50w_download.py
+   
      '''text
      import os
      import torch

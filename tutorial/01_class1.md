@@ -126,5 +126,26 @@ globus.alliancecan.ca/file-manager
 
 #### Now that we have covered these preliminary concepts, let's continue with the **Environment Creation and Interactive Sessions** section of the Quick Start Tutorial.
 
+#### Exercises
+In the files in data_1, the records of interest are the date record, the pilot record, the plane record, and GPS position record
 
+HFDTE<DD><MM><YY>         (date: day, month, year)
+HFPLTPILOTINCHARGE:<NAME> (pilot: name)
+HFGIDGLIDERID:<CALLSIGN>  (plane: call sign)
+
+1. Using head to look at 5 of the igc files and answer the following questions
+
+a. who the pilot is, and
+
+b. what the year was.
+
+2. For each of these files first few files, use the mkdir and cp commands to
+
+a. make a directory for that pilot (if required),
+
+b. make a directory in the pilot’s directory for that year (if required), and
+
+c. copy the file into the pilot/year directory.
+
+3. What happens if you run cat, head, and tail without any filename argument? In trying this, be aware that CTRL+c can be used to abort most command and CTRL+d signals the end of keyboard input.
 

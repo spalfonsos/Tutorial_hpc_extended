@@ -111,9 +111,7 @@ globus.alliancecan.ca/file-manager
 
 <img width="1918" height="1043" alt="image" src="https://github.com/user-attachments/assets/0e05cecc-eda5-4913-8308-0404f863b63c" />
 
-
-
-
+# Now with these preliminary concepts lets follow the session Environment Creation & Interactive Sessions of the Quick start tutorial
 
 
 

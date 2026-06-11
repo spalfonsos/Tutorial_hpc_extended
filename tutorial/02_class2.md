@@ -6,4 +6,52 @@ Now go to the book page (if possible) https://www.bankingbook.ml/ and download t
 
 If you could not access to the internet lets copy the file directly into our desired folder
 
-- In our tutorial folder in my case 
+- In our tutorial folder (in my case tutorial_hpc_bcp) folder.
+- Create a folder for the second class
+- mkdir class2
+- download the file into that folder wget -O lab2.ipynb https://github.com/Banking-Analytics-Lab/DLinBankingBook/blob/main/Labs/TextBook_Lab_Chap2_Image_Processing.ipynb (Multimodal model with tabular data and Lidar images in this case to predict the loan delinquency ratio)
+
+For runing the previous notebook in the cluster we need to 
+
+- Activate the environment and add te extra packages required for the notebook
+
+  module load gcc
+  module load cuda
+  module load opencv
+  source /home/salfonso/p3_env_nvl_test/bin/activate
+  pip install --no-index gdown ipywidgets torchcam livelossplot opencv-python torchvision
+
+ a. Get the data (in login node)
+ - gdown  'https://drive.google.com/file/d/1uDziz14xOgUTmW2DxPufuQMATL6O8Ial/view?usp=sharing' -O /home/salfonso/projects/def-cbravo/salfonso/tutorial_hpc_bcp/usg_lidar.zip
+ - gdown  'https://drive.google.com/file/d/1-YWiPPtLQmkuWjcZcckM9vgv4Fsm68Je/view?usp=sharing' -O /home/salfonso/projects/def-cbravo/salfonso/tutorial_hpc_bcp/sample_data.csv
+
+   b. Also we need to get the weights for the ResNet50 model that is going to be used in the script in class2 create the folder
+   - mkdir resnet50_model_weights
+   - nano resnet50w_download.py
+     '''text
+     import os
+     import torch
+     from torchvision.models import resnet50, ResNet50_Weights
+    
+      save_path = "/home/salfonso/projects/def-cbravo/salfonso/tutorial_hpc_bcp/class2/resnet50_model_weights/resnet50_imagenet.pth"
+    
+    # Create the directory if it does not exist
+    os.makedirs(os.path.dirname(save_path), exist_ok=True)
+    
+    # Download the pretrained model
+    model = resnet50(weights=ResNet50_Weights.DEFAULT)
+    
+    # Save the weights directly to the desired location
+    torch.save(model.state_dict(), save_path)
+    
+    print(f"Weights saved to: {save_path}") '''
+   - run the previous code in the login node to get the weights, this is in the resnet50_model_weights, python resnet50w_download.py
+
+  Now lets ask for the interactive section, in this case 
+
+salloc --account=def-cbravo --gpus=a100_2g.10gb:1 --cpus-per-task=1 --mem-per-cpu=2G --time=0:30:00 srun $VIRTUAL_ENV/bin/notebook.sh
+  
+
+
+
+   

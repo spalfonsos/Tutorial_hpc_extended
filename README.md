@@ -11,7 +11,7 @@ This repository provides the summary of what is going to be explained in the tut
 
 
 ## 📂 Contents
-- 🧾 [01 Class 1](tutorial/01_account_mfa.md)
+- 🧾 [01 Class 1](tutorial/01_class1.md)
 - 🧾 [02 Class 2](tutorial/01_account_mfa.md)
 - 🧾 [03 Class 3](tutorial/01_account_mfa.md)
 

@@ -55,7 +55,8 @@ For runing the previous notebook in the cluster we need to
       
       print(f"Weights saved to: {save_path}")
    ```
-   - run the previous code in the login node to get the weights, this is in the resnet50_model_weights, python resnet50w_download.py
+   
+  - run the previous code in the login node to get the weights, this is in the resnet50_model_weights, python resnet50w_download.py
 
   Now lets ask for the interactive section, in this case 
 

@@ -50,13 +50,15 @@ For runing the previous notebook in the cluster we need to
 
   Now lets ask for the interactive section, in this case 
 
-salloc --account=def-cbravo --gpus=a100_2g.10gb:1 --cpus-per-task=1 --mem-per-cpu=2G --time=0:30:00 srun $VIRTUAL_ENV/bin/notebook.sh
+salloc --account=def-cbravo --gpus=a100_2g.10gb:1 --cpus-per-task=1 --mem-per-cpu=2G --time=0:40:00 srun $VIRTUAL_ENV/bin/notebook.sh
   
 -In the file lets change some parts to be able to run it in the interactive session (Remmber to use  in your local terminal ssh -L 8888:ngXXXX.narval.calcul.quebec:XXXX salfonso@narval.alliancecan.ca)
     * Coment all the pip statements and the unzip comment since that we did previously
+    
     * After the first model is trained change 
     model_path = "/content/drive/MyDrive/Colab Notebooks/DL in Banking Book/DeepLearningInBankingBook/TextBook_Lab/c2_best_simple_cnn_1e-5_top.pth" to
     model_path = "best_simple_cnn.pth"
+    
     * And in the sectio Training a ResNet-50 for Loan Delinquency Prediction
     Add the WEIGHTS_PATH = "resnet50_model_weights/resnet50_imagenet.pth"
     and change  self.backbone = models.resnet50(weights='DEFAULT') to :

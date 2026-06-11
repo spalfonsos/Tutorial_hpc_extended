@@ -68,6 +68,11 @@ salloc --account=def-cbravo --gpus=a100_2g.10gb:1 --cpus-per-task=1 --mem-per-cp
 
 
 ### Converting the script to .py and submit the job
+Since for runing the scripts in an interactive session has a time limit and the connection could be fragile (internet connection-tunnel). This is usually used for looking all is runing fine and to get a sense about the time and resources that were used.
+
+In the following part we are going to convert the notebook file to a python, in the class folder convert the file to .py script
+jupyter nbconvert --to script lab2.ipynb
+
 
 
    

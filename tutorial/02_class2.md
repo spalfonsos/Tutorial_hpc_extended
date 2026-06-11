@@ -74,6 +74,23 @@ In the following part we are going to convert the notebook file to a python, in 
 
 jupyter nbconvert --to script lab2.ipynb
 
+This generates a lab2.py file
+
+1. Remove
+get_ipython().run_line_magic('matplotlib', 'inline')
+from IPython.display import Image as DisplayImage
+
+2, Replace 
+DisplayImage(filename='usgs_lidar/10180_796_USGS_13_n33w101_20191031.jpg')
+DisplayImage(filename='usgs_lidar/nan_835_USGS_13_n47w115_20241127.jpg')
+
+img = Image.open('usgs_lidar/10180_796_USGS_13_n33w101_20191031.jpg')
+plt.imshow(img, cmap='gray')
+plt.axis("off")
+plt.savefig("example_lidar_1.png", bbox_inches="tight")
+plt.close()
+
+
 
 
    

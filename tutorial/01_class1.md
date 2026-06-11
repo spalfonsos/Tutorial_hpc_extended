@@ -128,11 +128,11 @@ globus.alliancecan.ca/file-manager
 
 #### Exercises
 In the files in data_1, the records of interest are the date record, the pilot record, the plane record, and GPS position record
-
+```text
 HFDTE<DD><MM><YY>         (date: day, month, year)
 HFPLTPILOTINCHARGE:<NAME> (pilot: name)
 HFGIDGLIDERID:<CALLSIGN>  (plane: call sign)
-
+```
 1. Using head to look at 5 of the igc files and answer the following questions
 
 a. who the pilot is, and

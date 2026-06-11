@@ -94,18 +94,13 @@ plt.savefig("example_lidar_1.png", bbox_inches="tight")
 plt.close()
 
 3. Replace plt.show() in the imshow function for
-   plt.savefig("training_examples.png",
-            dpi=300,
-            bbox_inches="tight")
+   plt.savefig("training_examples.png", dpi=300, box_inches="tight")
    plt.close()
  4. Replace the rest of plt.show() to plt.close()
  5. For ResNet result
     Change liveloss= PlotLosses() to
 
-    liveloss = PlotLosses(
-    outputs=[MatplotlibPlot(
-        figpath="ConvergenceResNet50.pdf")]
-)
+    liveloss = PlotLosses(outputs=[MatplotlibPlot(figpath="ConvergenceResNet50.pdf")])
 
 5. Track the time
 import time
@@ -152,6 +147,31 @@ print("="*60)
 For making more orginize the results lets move the script in another subfolder called script in the folder class2
 - mkdir script
 - mv lab2.py script/lab2.py
-Make the previous changes and also the changes in the paths.
+Make the previous changes and also the changes in the paths for the data sets needed.
+df = pd.read_csv('../sample_data.csv', dtype=str)
+df['loan_delinquency'] = df['loan_delinquency'].astype(float)
+df['LiDAR_File'] = ('../' + df['LiDAR_File'].astype(str).str.replace("\\", "/")) ## fol
+
 
 #### script to submit the job 
+
+In the folder lab2job.sh
+#!/bin/bash
+#
+#SBATCH --job-name=image-deliquency
+#SBATCH --gpus=a100_2g.10gb:1
+#SBATCH --cpus-per-task=1
+#SBATCH --mem-per-cpu=2G
+#SBATCH --time=00:40:00
+#SBATCH --account=def-cbravo
+#SBATCH --output=lab2job.out
+
+module load python scipy-stack
+module load gcc
+module load cuda
+module load opencv
+source ~/p3_env_nvl_test/bin/activate
+python lab2.py
+
+In the terminal in narval submit the job
+

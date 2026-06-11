@@ -155,7 +155,8 @@ df['LiDAR_File'] = ('../' + df['LiDAR_File'].astype(str).str.replace("\\", "/"))
 
 #### script to submit the job 
 
-In the folder lab2job.sh
+In the folder create lab2job.sh
+nano lab2job.sh
 #!/bin/bash
 #
 #SBATCH --job-name=image-deliquency
@@ -174,4 +175,6 @@ source ~/p3_env_nvl_test/bin/activate
 python lab2.py
 
 In the terminal in narval submit the job
+
+(p3_env_nvl_test) [salfonso@narval1 script]$ sbatch lab2job.sh
 

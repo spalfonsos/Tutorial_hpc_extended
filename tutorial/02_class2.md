@@ -38,23 +38,23 @@ For runing the previous notebook in the cluster we need to
    - mkdir resnet50_model_weights
    - nano resnet50w_download.py
    
-     '''text
-     import os
-     import torch
-     from torchvision.models import resnet50, ResNet50_Weights
-    
+     ```text
+      import os
+      import torch
+      from torchvision.models import resnet50, ResNet50_Weights
       save_path = "/home/salfonso/projects/def-cbravo/salfonso/tutorial_hpc_bcp/class2/resnet50_model_weights/resnet50_imagenet.pth"
     
-    # Create the directory if it does not exist
-    os.makedirs(os.path.dirname(save_path), exist_ok=True)
-    
-    # Download the pretrained model
-    model = resnet50(weights=ResNet50_Weights.DEFAULT)
-    
-    # Save the weights directly to the desired location
-    torch.save(model.state_dict(), save_path)
-    
-    print(f"Weights saved to: {save_path}") '''
+      # Create the directory if it does not exist
+      os.makedirs(os.path.dirname(save_path), exist_ok=True)
+      
+      # Download the pretrained model
+      model = resnet50(weights=ResNet50_Weights.DEFAULT)
+      
+      # Save the weights directly to the desired location
+      torch.save(model.state_dict(), save_path)
+      
+      print(f"Weights saved to: {save_path}")
+   ```
    - run the previous code in the login node to get the weights, this is in the resnet50_model_weights, python resnet50w_download.py
 
   Now lets ask for the interactive section, in this case 

@@ -148,3 +148,10 @@ print(f"ResNet50 time:     {resnet_time:.2f} seconds "
 print(f"Total script time: {total_time:.2f} seconds "
       f"({total_time/60:.2f} minutes)")
 print("="*60)   
+
+For making more orginize the results lets move the script in another subfolder called script in the folder class2
+- mkdir script
+- mv lab2.py script/lab2.py
+Make the previous changes and also the changes in the paths.
+
+#### script to submit the job 

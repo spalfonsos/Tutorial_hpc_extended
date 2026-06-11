@@ -94,7 +94,7 @@ plt.savefig("example_lidar_1.png", bbox_inches="tight")
 plt.close()
 
 3. Replace plt.show() in the imshow function for
-   plt.savefig("training_examples.png", dpi=300, box_inches="tight")
+   plt.savefig("training_examples.png", dpi=300, bbox_inches="tight")
    plt.close()
  4. Replace the rest of plt.show() to plt.close()
  5. For ResNet result

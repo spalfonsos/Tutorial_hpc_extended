@@ -94,9 +94,9 @@ nso/tutorial_hpc_bcp/class1/3a396e65.igc
 salfonso@DSAS:~$ scp salfonso@narval.computecanada.ca:/home/salfonso/projects/def-cbravo/salfonso/tutorial_hpc_bcp/class1/3a396e65.igc "/mnt/c/Users/salfo/OneDrive - The University of Western Ontario/PHD/Banking-Analytics/BCP_Project/TutorialHPC/Class1/filefromnarval.igc"
 
 - from different remote clusters
-scp salfonso@narval.computecanada.ca:/home/salfonso/projects/def-cbravo/salfonso/tutorial_hpc_bcp/class1/3a396e65.igc salfonso@nibi.alliance.ca:~/
+[salfonso@narval1 ~]$ scp /home/salfonso/projects/def-cbravo/salfonso/tutorial_hpc_bcp/class1/3a396e65.igc salfonso@nibi.alliancecan.ca:~/3a396e65.igc
 
-Remember we could have access to the following resources however in every cluster we will need to store the adequate folders (this is if we create sth in narval is not going to be stored by default in nibi)
+As an important observation in every cluster we will need to store the adequate folders (this is if we create sth in narval is not going to be stored by default in nibi)
 https://docs.alliancecan.ca/wiki/Narval/en
 https://docs.alliancecan.ca/wiki/Nibi#GPU_instances
 https://docs.alliancecan.ca/wiki/Fir

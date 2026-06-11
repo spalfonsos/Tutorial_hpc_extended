@@ -126,7 +126,7 @@ globus.alliancecan.ca/file-manager
 
 #### Now that we have covered these preliminary concepts, let's continue with the **Environment Creation and Interactive Sessions** section of the Quick Start Tutorial.
 
-#### Exercises
+#### Exercises for you to practice
 In the files in data_1, the records of interest are the date record, the pilot record, the plane record, and GPS position record
 ```text
 HFDTE<DD><MM><YY>         (date: day, month, year)

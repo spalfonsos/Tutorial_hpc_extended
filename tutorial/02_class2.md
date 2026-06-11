@@ -65,6 +65,9 @@ salloc --account=def-cbravo --gpus=a100_2g.10gb:1 --cpus-per-task=1 --mem-per-cp
       self.backbone = models.resnet50(weights=None)
       self.backbone.load_state_dict(torch.load(WEIGHTS_PATH)
 
+    * change the plt.savefig('/content/drive/MyDrive/Colab Notebooks/DL in Banking Book/Images/C2_SmoothGradCam.pdf') to
+    plt.savefig('C2_SmoothGradCam.pdf')
+
 
 
 ### Converting the script to .py and submit the job
@@ -90,7 +93,58 @@ plt.axis("off")
 plt.savefig("example_lidar_1.png", bbox_inches="tight")
 plt.close()
 
+3. Replace plt.show() in the imshow function for
+   plt.savefig("training_examples.png",
+            dpi=300,
+            bbox_inches="tight")
+   plt.close()
+ 4. Replace the rest of plt.show() to plt.close()
+ 5. For ResNet result
+    Change liveloss= PlotLosses() to
 
+    liveloss = PlotLosses(
+    outputs=[MatplotlibPlot(
+        figpath="ConvergenceResNet50.pdf")]
+)
 
+5. Track the time
+import time
+total_start = time.time()
 
-   
+Add in important moments 
+print("\n===== Training Simple CNN =====")
+cnn_start = time.time()
+
+After the cnn has finished 
+cnn_end = time.time()
+cnn_time = cnn_end - cnn_start
+
+print("\n===== Simple CNN Summary =====")
+print(f"Simple CNN execution time: {cnn_time:.2f} seconds "
+      f"({cnn_time/60:.2f} minutes)")
+
+print("\n===== Training ResNet50 =====")
+resnet_start = time.time()
+
+resnet_end = time.time()
+resnet_time = resnet_end - resnet_start
+
+print("\n===== ResNet50 Summary =====")
+print(f"ResNet50 execution time: {resnet_time:.2f} seconds "
+      f"({resnet_time/60:.2f} minutes)")
+
+total_end = time.time()
+total_time = total_end - total_start
+
+print("\n" + "="*60)
+print("EXECUTION SUMMARY")
+print("="*60)
+print(f"Simple CNN Test RMSE: {mse ** 0.5:.4f}")
+print(f"Simple CNN time:   {cnn_time:.2f} seconds "
+      f"({cnn_time/60:.2f} minutes)")
+print(f"ResNet50 Test RMSE: {rmse ** 0.5:.4f}")
+print(f"ResNet50 time:     {resnet_time:.2f} seconds "
+      f"({resnet_time/60:.2f} minutes)")
+print(f"Total script time: {total_time:.2f} seconds "
+      f"({total_time/60:.2f} minutes)")
+print("="*60)   

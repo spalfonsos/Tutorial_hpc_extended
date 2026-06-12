@@ -65,21 +65,21 @@ salloc --account=def-cbravo --gpus=a100_2g.10gb:1 --cpus-per-task=1 --mem-per-cp
   
 -In the file lets change some parts to be able to run it in the interactive session (Remmber to use  in your local terminal ssh -L 8888:ngXXXX.narval.calcul.quebec:XXXX salfonso@narval.alliancecan.ca)
 
-    * Coment all the pip statements and the unzip comment since that we did previously
+    * Coment all the pip statements and the unzip comment since  we did it previously
     
     * After the first model is trained change 
-    
     model_path = "/content/drive/MyDrive/Colab Notebooks/DL in Banking Book/DeepLearningInBankingBook/TextBook_Lab/c2_best_simple_cnn_1e-5_top.pth" to
     model_path = "best_simple_cnn.pth"
     
-    * And in the section Training a ResNet-50 for Loan Delinquency Prediction
     
+    * And in the section Training a ResNet-50 for Loan Delinquency Prediction
+
     Add the WEIGHTS_PATH = "resnet50_model_weights/resnet50_imagenet.pth"
     and change  self.backbone = models.resnet50(weights='DEFAULT') to :
     self.backbone = models.resnet50(weights=None)
     self.backbone.load_state_dict(torch.load(WEIGHTS_PATH)
 
-    * change the plt.savefig('/content/drive/MyDrive/Colab Notebooks/DL in Banking Book/Images/C2_SmoothGradCam.pdf') to
+    * change plt.savefig('/content/drive/MyDrive/Colab Notebooks/DL in Banking Book/Images/C2_SmoothGradCam.pdf') to
     plt.savefig('C2_SmoothGradCam.pdf')
 
 
@@ -95,69 +95,72 @@ jupyter nbconvert --to script lab2.ipynb
 This generates a lab2.py file
 
 1. Remove
-get_ipython().run_line_magic('matplotlib', 'inline')
-from IPython.display import Image as DisplayImage
+   
+  get_ipython().run_line_magic('matplotlib', 'inline')
+  from IPython.display import Image as DisplayImage
 
 2, Replace 
-DisplayImage(filename='usgs_lidar/10180_796_USGS_13_n33w101_20191031.jpg')
-DisplayImage(filename='usgs_lidar/nan_835_USGS_13_n47w115_20241127.jpg')
+  DisplayImage(filename='usgs_lidar/10180_796_USGS_13_n33w101_20191031.jpg')
+  DisplayImage(filename='usgs_lidar/nan_835_USGS_13_n47w115_20241127.jpg')
 
-img = Image.open('usgs_lidar/10180_796_USGS_13_n33w101_20191031.jpg')
-plt.imshow(img, cmap='gray')
-plt.axis("off")
-plt.savefig("example_lidar_1.png", bbox_inches="tight")
-plt.close()
+  img = Image.open('usgs_lidar/10180_796_USGS_13_n33w101_20191031.jpg')
+  plt.imshow(img, cmap='gray')
+  plt.axis("off")
+  plt.savefig("example_lidar_1.png", bbox_inches="tight")
+  plt.close()
 
 3. Replace plt.show() in the imshow function for
    plt.savefig("training_examples.png", dpi=300, bbox_inches="tight")
    plt.close()
  4. Replace the rest of plt.show() to plt.close()
- 5. For ResNet result
-    Change liveloss= PlotLosses() to
+    
+ 6. For ResNet result
 
+    Change liveloss= PlotLosses() to
     liveloss = PlotLosses(outputs=[MatplotlibPlot(figpath="ConvergenceResNet50.pdf")])
 
 5. Track the time
-  import time
-  total_start = time.time()
-  
-  Add in important moments 
-  print("\n===== Training Simple CNN =====")
-  cnn_start = time.time()
-  
-  After the cnn has finished 
-  cnn_end = time.time()
-  cnn_time = cnn_end - cnn_start
-  
-  print("\n===== Simple CNN Summary =====")
-  print(f"Simple CNN execution time: {cnn_time:.2f} seconds "
-        f"({cnn_time/60:.2f} minutes)")
-  
-  print("\n===== Training ResNet50 =====")
-  resnet_start = time.time()
-  
-  resnet_end = time.time()
-  resnet_time = resnet_end - resnet_start
-  
-  print("\n===== ResNet50 Summary =====")
-  print(f"ResNet50 execution time: {resnet_time:.2f} seconds "
-        f"({resnet_time/60:.2f} minutes)")
-  
-  total_end = time.time()
-  total_time = total_end - total_start
-  
-  print("\n" + "="*60)
-  print("EXECUTION SUMMARY")
-  print("="*60)
-  print(f"Simple CNN Test RMSE: {mse ** 0.5:.4f}")
-  print(f"Simple CNN time:   {cnn_time:.2f} seconds "
-        f"({cnn_time/60:.2f} minutes)")
-  print(f"ResNet50 Test RMSE: {rmse ** 0.5:.4f}")
-  print(f"ResNet50 time:     {resnet_time:.2f} seconds "
-        f"({resnet_time/60:.2f} minutes)")
-  print(f"Total script time: {total_time:.2f} seconds "
-        f"({total_time/60:.2f} minutes)")
-  print("="*60)   
+   
+    import time
+    total_start = time.time()
+    
+    Add in important moments 
+    print("\n===== Training Simple CNN =====")
+    cnn_start = time.time()
+    
+    After the cnn has finished 
+    cnn_end = time.time()
+    cnn_time = cnn_end - cnn_start
+    
+    print("\n===== Simple CNN Summary =====")
+    print(f"Simple CNN execution time: {cnn_time:.2f} seconds "
+          f"({cnn_time/60:.2f} minutes)")
+    
+    print("\n===== Training ResNet50 =====")
+    resnet_start = time.time()
+    
+    resnet_end = time.time()
+    resnet_time = resnet_end - resnet_start
+    
+    print("\n===== ResNet50 Summary =====")
+    print(f"ResNet50 execution time: {resnet_time:.2f} seconds "
+          f"({resnet_time/60:.2f} minutes)")
+    
+    total_end = time.time()
+    total_time = total_end - total_start
+    
+    print("\n" + "="*60)
+    print("EXECUTION SUMMARY")
+    print("="*60)
+    print(f"Simple CNN Test RMSE: {mse ** 0.5:.4f}")
+    print(f"Simple CNN time:   {cnn_time:.2f} seconds "
+          f"({cnn_time/60:.2f} minutes)")
+    print(f"ResNet50 Test RMSE: {rmse ** 0.5:.4f}")
+    print(f"ResNet50 time:     {resnet_time:.2f} seconds "
+          f"({resnet_time/60:.2f} minutes)")
+    print(f"Total script time: {total_time:.2f} seconds "
+          f"({total_time/60:.2f} minutes)")
+    print("="*60)   
 
 For making more orginize the results lets move the script in another subfolder called script in the folder class2
 - mkdir script
@@ -168,7 +171,7 @@ For making more orginize the results lets move the script in another subfolder c
   df['LiDAR_File'] = ('../' + df['LiDAR_File'].astype(str).str.replace("\\", "/")) 
 
 
-# ⚙️ 9. Adapting the script for batch execution
+# ⚙️ 9. Batch execution
 
 In the folder create lab2job.sh
 nano lab2job.sh

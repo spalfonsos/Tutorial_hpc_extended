@@ -55,32 +55,37 @@ For runing the previous notebook in the cluster we need to
       
       print(f"Weights saved to: {save_path}")
    ```
-   
-  - run the previous code in the login node to get the weights, this is in the resnet50_model_weights, python resnet50w_download.py
+   - run the previous code in the login node to get the weights, this is in the resnet50_model_weights, python resnet50w_download.py
 
-  Now lets ask for the interactive section, in this case 
+# 💻 6. Launching an interactive Jupyter session
+
+Now lets ask for the interactive section, in this case 
 
 salloc --account=def-cbravo --gpus=a100_2g.10gb:1 --cpus-per-task=1 --mem-per-cpu=2G --time=0:40:00 srun $VIRTUAL_ENV/bin/notebook.sh
   
 -In the file lets change some parts to be able to run it in the interactive session (Remmber to use  in your local terminal ssh -L 8888:ngXXXX.narval.calcul.quebec:XXXX salfonso@narval.alliancecan.ca)
+
     * Coment all the pip statements and the unzip comment since that we did previously
     
     * After the first model is trained change 
+    
     model_path = "/content/drive/MyDrive/Colab Notebooks/DL in Banking Book/DeepLearningInBankingBook/TextBook_Lab/c2_best_simple_cnn_1e-5_top.pth" to
     model_path = "best_simple_cnn.pth"
     
-    * And in the sectio Training a ResNet-50 for Loan Delinquency Prediction
+    * And in the section Training a ResNet-50 for Loan Delinquency Prediction
+    
     Add the WEIGHTS_PATH = "resnet50_model_weights/resnet50_imagenet.pth"
     and change  self.backbone = models.resnet50(weights='DEFAULT') to :
-      self.backbone = models.resnet50(weights=None)
-      self.backbone.load_state_dict(torch.load(WEIGHTS_PATH)
+    self.backbone = models.resnet50(weights=None)
+    self.backbone.load_state_dict(torch.load(WEIGHTS_PATH)
 
     * change the plt.savefig('/content/drive/MyDrive/Colab Notebooks/DL in Banking Book/Images/C2_SmoothGradCam.pdf') to
     plt.savefig('C2_SmoothGradCam.pdf')
 
 
 
-### Converting the script to .py and submit the job
+# 📄 8. Converting the notebook into a Python script 
+
 Since for runing the scripts in an interactive session has a time limit and the connection could be fragile (internet connection-tunnel). This is usually used for looking all is runing fine and to get a sense about the time and resources that were used.
 
 In the following part we are going to convert the notebook file to a python, in the class folder convert the file to .py script
@@ -113,57 +118,57 @@ plt.close()
     liveloss = PlotLosses(outputs=[MatplotlibPlot(figpath="ConvergenceResNet50.pdf")])
 
 5. Track the time
-import time
-total_start = time.time()
-
-Add in important moments 
-print("\n===== Training Simple CNN =====")
-cnn_start = time.time()
-
-After the cnn has finished 
-cnn_end = time.time()
-cnn_time = cnn_end - cnn_start
-
-print("\n===== Simple CNN Summary =====")
-print(f"Simple CNN execution time: {cnn_time:.2f} seconds "
-      f"({cnn_time/60:.2f} minutes)")
-
-print("\n===== Training ResNet50 =====")
-resnet_start = time.time()
-
-resnet_end = time.time()
-resnet_time = resnet_end - resnet_start
-
-print("\n===== ResNet50 Summary =====")
-print(f"ResNet50 execution time: {resnet_time:.2f} seconds "
-      f"({resnet_time/60:.2f} minutes)")
-
-total_end = time.time()
-total_time = total_end - total_start
-
-print("\n" + "="*60)
-print("EXECUTION SUMMARY")
-print("="*60)
-print(f"Simple CNN Test RMSE: {mse ** 0.5:.4f}")
-print(f"Simple CNN time:   {cnn_time:.2f} seconds "
-      f"({cnn_time/60:.2f} minutes)")
-print(f"ResNet50 Test RMSE: {rmse ** 0.5:.4f}")
-print(f"ResNet50 time:     {resnet_time:.2f} seconds "
-      f"({resnet_time/60:.2f} minutes)")
-print(f"Total script time: {total_time:.2f} seconds "
-      f"({total_time/60:.2f} minutes)")
-print("="*60)   
+  import time
+  total_start = time.time()
+  
+  Add in important moments 
+  print("\n===== Training Simple CNN =====")
+  cnn_start = time.time()
+  
+  After the cnn has finished 
+  cnn_end = time.time()
+  cnn_time = cnn_end - cnn_start
+  
+  print("\n===== Simple CNN Summary =====")
+  print(f"Simple CNN execution time: {cnn_time:.2f} seconds "
+        f"({cnn_time/60:.2f} minutes)")
+  
+  print("\n===== Training ResNet50 =====")
+  resnet_start = time.time()
+  
+  resnet_end = time.time()
+  resnet_time = resnet_end - resnet_start
+  
+  print("\n===== ResNet50 Summary =====")
+  print(f"ResNet50 execution time: {resnet_time:.2f} seconds "
+        f"({resnet_time/60:.2f} minutes)")
+  
+  total_end = time.time()
+  total_time = total_end - total_start
+  
+  print("\n" + "="*60)
+  print("EXECUTION SUMMARY")
+  print("="*60)
+  print(f"Simple CNN Test RMSE: {mse ** 0.5:.4f}")
+  print(f"Simple CNN time:   {cnn_time:.2f} seconds "
+        f"({cnn_time/60:.2f} minutes)")
+  print(f"ResNet50 Test RMSE: {rmse ** 0.5:.4f}")
+  print(f"ResNet50 time:     {resnet_time:.2f} seconds "
+        f"({resnet_time/60:.2f} minutes)")
+  print(f"Total script time: {total_time:.2f} seconds "
+        f"({total_time/60:.2f} minutes)")
+  print("="*60)   
 
 For making more orginize the results lets move the script in another subfolder called script in the folder class2
 - mkdir script
 - mv lab2.py script/lab2.py
-Make the previous changes and also the changes in the paths for the data sets needed.
-df = pd.read_csv('../sample_data.csv', dtype=str)
-df['loan_delinquency'] = df['loan_delinquency'].astype(float)
-df['LiDAR_File'] = ('../' + df['LiDAR_File'].astype(str).str.replace("\\", "/")) ## fol
+  Make the previous changes and also the changes in the paths for the data sets needed.
+  df = pd.read_csv('../sample_data.csv', dtype=str)
+  df['loan_delinquency'] = df['loan_delinquency'].astype(float)
+  df['LiDAR_File'] = ('../' + df['LiDAR_File'].astype(str).str.replace("\\", "/")) 
 
 
-#### script to submit the job 
+# ⚙️ 9. Adapting the script for batch execution
 
 In the folder create lab2job.sh
 nano lab2job.sh

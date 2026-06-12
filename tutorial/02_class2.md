@@ -175,6 +175,12 @@ For making more orginize the results lets move the script in another subfolder c
   df['loan_delinquency'] = df['loan_delinquency'].astype(float)
   df['LiDAR_File'] = ('../' + df['LiDAR_File'].astype(str).str.replace("\\", "/")) 
  ```
+and also 
+
+```text
+'resnet50_model_weights/resnet50_imagenet.pth' to '../resnet50_model_weights/resnet50_imagenet.pth'
+ ```
+
 
 # ⚙️ 9. Batch execution
 

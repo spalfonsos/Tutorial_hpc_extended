@@ -21,12 +21,22 @@ If you could not access to the internet lets copy the file directly into our des
 
 For runing the previous notebook in the cluster we need to 
 
-- Activate the environment and add te extra packages required for the notebook
+- Activate the environment and add te extra packages required for the notebook.
 
+```text
+  #!/bin/bash
+  #
+
+  module load python
+  module scipy-stack
+  module list
   module load gcc
   module load cuda
   module load opencv
   source /home/salfonso/p3_env_nvl_test/bin/activate
+  ```
+  We can create a.sh file to activate the env with the modules (chmod u+x), I am going to called it bcpt_env.sh
+  
   pip install --no-index gdown ipywidgets torchcam livelossplot opencv-python torchvision
 
  a. Get the data (in login node)

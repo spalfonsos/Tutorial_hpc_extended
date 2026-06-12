@@ -95,32 +95,36 @@ jupyter nbconvert --to script lab2.ipynb
 This generates a lab2.py file
 
 1. Remove
-   
+  ```text 
   get_ipython().run_line_magic('matplotlib', 'inline')
   from IPython.display import Image as DisplayImage
-
-2, Replace 
+  ```
+2, Replace
+  ```text 
   DisplayImage(filename='usgs_lidar/10180_796_USGS_13_n33w101_20191031.jpg')
   DisplayImage(filename='usgs_lidar/nan_835_USGS_13_n47w115_20241127.jpg')
-
+  to
   img = Image.open('usgs_lidar/10180_796_USGS_13_n33w101_20191031.jpg')
   plt.imshow(img, cmap='gray')
   plt.axis("off")
   plt.savefig("example_lidar_1.png", bbox_inches="tight")
   plt.close()
-
+   ```
 3. Replace plt.show() in the imshow function for
-   plt.savefig("training_examples.png", dpi=300, bbox_inches="tight")
-   plt.close()
+  ```text
+    plt.savefig("training_examples.png", dpi=300, bbox_inches="tight")
+    plt.close()
+  ```
  4. Replace the rest of plt.show() to plt.close()
     
  6. For ResNet result
-
+    ```text
     Change liveloss= PlotLosses() to
     liveloss = PlotLosses(outputs=[MatplotlibPlot(figpath="ConvergenceResNet50.pdf")])
-
+    ```
 5. Track the time
-   
+
+```text
     import time
     total_start = time.time()
     
@@ -161,20 +165,22 @@ This generates a lab2.py file
     print(f"Total script time: {total_time:.2f} seconds "
           f"({total_time/60:.2f} minutes)")
     print("="*60)   
-
+     ```
 For making more orginize the results lets move the script in another subfolder called script in the folder class2
 - mkdir script
 - mv lab2.py script/lab2.py
   Make the previous changes and also the changes in the paths for the data sets needed.
+```text
   df = pd.read_csv('../sample_data.csv', dtype=str)
   df['loan_delinquency'] = df['loan_delinquency'].astype(float)
   df['LiDAR_File'] = ('../' + df['LiDAR_File'].astype(str).str.replace("\\", "/")) 
-
+ ```
 
 # ⚙️ 9. Batch execution
 
 In the folder create lab2job.sh
 nano lab2job.sh
+```text
 #!/bin/bash
 #
 #SBATCH --job-name=image-deliquency
@@ -191,6 +197,7 @@ module load cuda
 module load opencv
 source ~/p3_env_nvl_test/bin/activate
 python lab2.py
+ ```
 
 In the terminal in narval submit the job
 

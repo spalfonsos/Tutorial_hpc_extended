@@ -67,3 +67,11 @@ In our environment lets install xgboost and shap libraries having activated sour
 
 pip install --no-index xgboost shap
 
+- Multicore results
+  AUC
+  figure
+  SHAP importance
+  We can see the Pay variables are the most important in the SHAP model, the Amount of Credit (Card Limit, LIM_BAL) appears as a significantly important variable in this case. The limit balance causes a bigger shift than the other variables, which is what SHAP is looking for.
+  example 1
+  
+

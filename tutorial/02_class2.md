@@ -73,7 +73,7 @@ Now lets ask for the interactive section, in this case (with the env activated)
 
 salloc --account=def-cbravo --gpus=a100_2g.10gb:1 --cpus-per-task=1 --mem-per-cpu=2G --time=0:40:00 srun $VIRTUAL_ENV/bin/notebook.sh
   
--In the file lets change some parts to be able to run it in the interactive session (Remmber to use  in your local terminal ssh -L 8888:ngXXXX.narval.calcul.quebec:XXXX salfonso@narval.alliancecan.ca)
+-In the file lets change some parts to be able to run it in the interactive session (Remember to use  in your local terminal ssh -L 8888:ngXXXX.narval.calcul.quebec:XXXX salfonso@narval.alliancecan.ca)
 
     * Coment all the pip statements and the unzip comment since  we did it previously
     

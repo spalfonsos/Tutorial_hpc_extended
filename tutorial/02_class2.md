@@ -69,7 +69,7 @@ For runing the previous notebook in the cluster we need to
 
 # 💻 6. Launching an interactive Jupyter session
 
-Now lets ask for the interactive section, in this case 
+Now lets ask for the interactive section, in this case (with the env activated)
 
 salloc --account=def-cbravo --gpus=a100_2g.10gb:1 --cpus-per-task=1 --mem-per-cpu=2G --time=0:40:00 srun $VIRTUAL_ENV/bin/notebook.sh
   
@@ -218,4 +218,6 @@ python lab2.py
 In the terminal in narval submit the job
 
 (p3_env_nvl_test) [salfonso@narval1 script]$ sbatch lab2job.sh
+
+
 

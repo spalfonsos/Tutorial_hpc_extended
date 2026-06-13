@@ -21,7 +21,7 @@ If you could not access to the internet lets copy the file directly into our des
 
 For runing the previous notebook in the cluster we need to 
 
-- Activate the environment and add te extra packages required for the notebook.
+- Activate the environment and add the extra packages required for the notebook.
 
 ```text
   #!/bin/bash
@@ -35,7 +35,7 @@ For runing the previous notebook in the cluster we need to
   module load opencv
   source /home/salfonso/p3_env_nvl_test/bin/activate
   ```
-  We can create the bcpt_env.sh file to activate the env with the modules and activate it with : source bcpt_env.sh 
+  We can create the bcpt_env.sh file to activate the env with the modules and activate it with : source bcpt_env.sh (from the directory when the folder is!)
   
   pip install --no-index gdown ipywidgets torchcam livelossplot opencv-python torchvision
 
